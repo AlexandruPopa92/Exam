@@ -1,0 +1,30 @@
+@model User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Page</title>
+<!-- -------------------------------------- BOOTSTRAP AND CSS LINKS----------------------------------- -->
+    <link rel="stylesheet" href="~/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/style.css" />
+<!-- ------------------------------------------------------------------------------------------------- -->
+</head>
+<body>
+    <div class="container">
+        <div class="row align-items-center">
+            <h4 class="col-md-8 "></h4>
+            <p class="col-md-2 logout"><a href="/home" class="btn btn-primary ">Bright Ideas</a></p>
+            <p class="col-md-2 logout"><a href="/logout" class="btn btn-primary ">Log Out</a></p>
+        </div>
+        <p>Name : @Model.FirstName @Model.LastName</p>
+        <p>Email : @Model.Email</p>
+        <hr>
+        <br>
+        <p>Total Nuber Of Posts : @Model.Posted.Count</p>
+        <p>Total Nuber Of Likes : @Model.Liked.Count</p>
+
+    </div>
+</body>
+</html>

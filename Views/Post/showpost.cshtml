@@ -1,0 +1,48 @@
+@model Post
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post Page</title>
+<!-- -------------------------------------- BOOTSTRAP AND CSS LINKS----------------------------------- -->
+    <link rel="stylesheet" href="~/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/style.css" />
+<!-- ------------------------------------------------------------------------------------------------- -->
+</head>
+<body>
+    <div class="container">
+        <div class="row align-items-center">
+            <h4 class="col-md-8 "></h4>
+            <p class="col-md-2 logout"><a href="/home" class="btn btn-primary ">Bright Ideas</a></p>
+            <p class="col-md-2 logout"><a href="/logout" class="btn btn-primary ">Log Out</a></p>
+        </div>
+        <h4>@Model.Creator.FirstName says:</h4>
+        <p class="blockquote-footer">@Model.Content</p>
+
+        <h5>People who liked this post:</h5>
+        @if(@Model.Likes != null)
+        {
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Alias</th>
+                    <th scope="col">Name</th>
+                </tr>
+                </thead>
+                <tbody>                
+                    @foreach (var user in @Model.Likes)
+                    {
+                        <tr>
+                            <td><a href="/users/@user.User.UserId">@user.User.LastName</a></td>
+                            <td>@user.User.FirstName @user.User.LastName </td>
+                        </tr>
+                    }                
+                </tbody>
+            </table>
+           
+        }
+    </div>
+</body>
+</html>

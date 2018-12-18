@@ -1,0 +1,39 @@
+.container 
+{
+    margin-top: 2%;
+}
+.link
+{
+    text-align: right;
+}
+.logout
+{
+    text-align: right;
+}
+.row{
+    border-bottom: 1px solid gray;
+    margin-top: 1%;
+    padding: 5px;
+}
+.row form{
+    margin-right: 2px;
+}
+.info
+{
+    margin-top: 2%;
+}
+.add
+{
+    text-align: right;
+}
+.forms
+{
+    width: 47%;
+    vertical-align: top;
+    display: inline-block;
+
+}
+.post
+{
+    margin: 3% 0% 0% 5%;
+}
